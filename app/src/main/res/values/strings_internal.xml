@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--sdk-->
+    <string name="facebook_app_id">1765836466961843</string>
+    <string name="twitter_api_k">d13d2dab3bd5462fd1504081d516a011e3677ae2</string>
+    <string name="twitter_consumer_k">aAuNRumlbjnF1BK0y7LUETu2i</string>
+    <string name="twitter_consumer_s">XbDUFovDwEextZH9JrSZyzTHBNlbfnLEyuRi8xjvDh2ka1evxg</string>
+    <string name="gcm_project_number">690114942653</string>
+
+    <string name="label_config">Configuration</string>
+    <string name="send_log">Send Log</string>
+    <string name="eds_address">EDS Address</string>
+    <string name="spare_eds_address">Spare EDS Address</string>
+    <string name="config_log">Open Https: </string>
+    <string name="fps">Open FPS: </string>
+    <string name="dynamic_page_state">Open Dynamic page: </string>
+    <string name="open_vr">Open VR </string>
+    <string name="http_persistent_connection">Open Http Persistent Connection: </string>
+    <string name="resource_package_version">Resource Package Version</string>
+    <string name="build_version">Build Version</string>
+    <string name="show_detail">Detail</string>
+    <string name="log_level">Log Level</string>
+    <string name="cookie_file">Cookie File</string>
+    <string name="log_level_hint">D:0, I:1, W:2, E:3;CLOSE:4; Default:3</string>
+    <string name="mb">MB</string>
+    <string name="kb">KB</string>
+    <string name="gb">GB</string>
+    <string name="upgrade_download_fail">Download failed.</string>
+    <string name="upgrade_download_succeed">Download completed. Click to install App.</string>
+    <string name="tips_no_program">No Program</string>
+    <string name="tips_no_information">No Information</string>
+    <string name="auth_invalid_response">Invalid authenticate response, profileID not in profiles</string>
+    <string name="fluent_kb">300</string>
+    <string name="sd_kb">450</string>
+    <string name="hd_kb">750</string>
+    <string name="home_optimization">Phone Home Optimization</string>
+    <string name="home_optimization_hint">Old:0, New:1</string>
+    <string name="openLog">Open log</string>
+    <string name="dlna_log_state">Open DLNA Log</string>
+    <string name="debug">Debug</string>
+    <string name="info">Info</string>
+    <string name="warning">Warning</string>
+    <string name="error">Error</string>
+    <string name="none">None</string>
+    <string name="pvr_mode">PVR mode</string>
+    <string name="cpvr">CPVR</string>
+    <string name="npvr">NPVR</string>
+    <string name="cpvr_and_npvr">CPVR&#038;NPVR</string>
+    <string name="mixpvr">MIXPVR</string>
+    <string name="ca_type">CA Type</string>
+    <string name="vmx">VMX</string>
+    <string name="playready">PlayReady</string>
+    <string name="widevine">Widevine</string>
+
+    <string name="hide">HIDE</string>
+    <string name="detail">DETAIL</string>
+    <!--password error-->
+    <string name="comma">,</string>
+    <string name="stop">.</string>
+    <string name="space">&#160;</string>
+    <string name="short_horizontal_line">&#160;-&#160;</string>
+    <string name="vertical_line">&#160;|&#160;</string>
+    <string name="colon">:</string>
+    <!-- Download-->
+    <string name="flow_g">G</string>
+    <string name="flow_m">M</string>
+    <string name="kbs">kb/s</string>
+    <string name="config_invalid">%1$s is invalid</string>
+    <string name="not_supportcpvr">such recording is not supported.</string>
+</resources>

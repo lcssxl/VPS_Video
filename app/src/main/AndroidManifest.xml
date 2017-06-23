@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.open.free.videoplay" >
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <!-- Add for   GCM begin -->
+    <permission android:name="com.huawei.dhott.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.huawei.dhott.permission.C2D_MESSAGE"/>
+    <!-- App receives GCM messages. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <!-- Add for GCM end" -->
+
+
+    <application
+        android:name=".OTTApplication_lcs"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".views.VideoView"
+            android:label="@string/app_name"
+            android:configChanges="orientation|screenSize">
+        </activity>
+
+
+
+        <!-- Add for GCM begin -->
+        <receiver
+            android:name="com.open.free.videoplay.module.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.huawei.dhott"/>
+            </intent-filter>
+        </receiver>
+        <!-- Add for GCM end -->
+        <!--<receiver
+            android:name="com.huawei.ott.service.NetworkReceiver"
+            android:exported="false"
+            android:permission="com.huawei.dhott.permission.Broadcast">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>-->
+
+        <service android:name="com.huawei.remoteplayer.RemoteService"
+            android:enabled="true"
+            android:permission="com.huawei.dhott.permission.Player"
+            android:process=":player" >
+            <intent-filter>
+                <action android:name="com.huawei.remoteplayer.startservice"></action>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
