@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "com.open.free.vps_video"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+repositories {
+    /**
+     * for aar package
+     */
+    flatDir {
+        dirs 'libs/thirdparty_lib/ott-sdk/'
+        dirs 'libs/self_lib/aar/'
+        dirs 'libs/self_lib/ott-sdk/'
+        dirs 'libs/self_lib/ott-vsp/'
+        dirs 'libs/tools/'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/self_lib/player/DmpPlayer.jar')
+    compile files('libs/self_lib/ott-sdk/ndk/ott-ndk.jar')
+    compile files('libs/thirdparty_lib/ott-sdk/gson-2.3.1.jar')
+    compile files('libs/thirdparty_lib/ott-sdk/retrofit-1.8.0.jar')
+    compile files('libs/thirdparty_lib/ott-sdk/core-3.2.1.jar')
+    compile files('libs/thirdparty_lib/ott-sdk/commons-io-2.4.jar')
+    compile files('libs/thirdparty_lib/ott-sdk/universal-image-loader-1.9.5.jar')
+    compile files('libs/thirdparty_lib/ott-sdk/roboguice-3.0.jar')
+    compile files('libs/thirdparty_lib/ott-sdk/glide-3.7.0.jar')
+    compile files('libs/thirdparty_lib/ott-sdk/glide-okhttp3-integration-1.4.0.jar')
+    compile files('libs/tools/coverityfortifyPlugin-1.2.3.jar')
+    /**
+     * project:OTT sdk library
+     */
+    compile(name: 'ott-sdk', ext: 'aar') { exclude module: 'support-v4' }
+    /**
+     * project:OTT VSP library
+     */
+    compile(name: 'ott-vsp', ext: 'aar') { exclude module: 'support-v4' }
+    compile files('libs/thirdparty_lib/ott-sdk/jackson-annotations-2.8.1.jar')
+    compile files('libs/thirdparty_lib/ott-sdk/jackson-core-2.8.1.jar')
+    compile files('libs/thirdparty_lib/ott-sdk/jackson-databind-2.8.1.jar')
+}
